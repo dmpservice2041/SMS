@@ -113,7 +113,7 @@ error_reporting(0);
   <!-- Copyright -->
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
     © <?php echo date('Y'); ?> Copyright:
-    <a class="text-body" target="_blank" href="https://www.github.com/ProjectsAndPrograms">ProjectsAndPrograms</a>
+    <a class="text-body" target="_blank" href="https://www.dpinfosystem.in>ProjectsAndPrograms</a>
   </div>
   <!-- Copyright -->
 </footer>

@@ -129,12 +129,12 @@ function getEmailObject($reciever, $otp){
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
-    $mail->Username = 'erp.schoolmanagementsystem@gmail.com';
-    $mail->Password = 'whqbysomdhdjthvr'; 
+    $mail->Username = 'darpan.patelm@gmail.com';
+    $mail->Password = 'whqbysomdhdjt'; 
     $mail->SMTPSecure = 'tls';  
     $mail->Port = 587;
     
-    $mail->setFrom('erp.schoolmanagementsystem@gmail.com');
+    $mail->setFrom('darpan.patelm@gmail.com');
     $mail->addAddress(''.$reciever);
   
     $mail->isHTML(true);

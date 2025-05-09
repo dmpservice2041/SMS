@@ -268,7 +268,7 @@ function showSubjects() {
                 for (let i = 0; i < data.length; i++) {
                     subjects += data[i];
                 }
-                
+                console.log("HTML being set to table body:", subjects);
                 document.getElementById('subject-table-body').innerHTML = subjects;
 
 

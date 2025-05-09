@@ -7,12 +7,12 @@
     </div>
   </form>
 
-
+<!--
   <div id="oranbyte-google-translator" 
         data-default-lang="en"
         data-lang-root-style="code-flag"
         data-lang-list-style="code-flag"
-        ></div>
+        ></div> -->
 
 
   <input type="checkbox" id="theme-toggle" hidden>

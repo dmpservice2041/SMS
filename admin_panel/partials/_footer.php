@@ -6,7 +6,7 @@
     <script src="js/bootstrap.bundle.js"></script>
     
     <script src="script.js"></script>
-    <script src="../js/oranbyte-google-translator.js"></script>
+    <!-- <script src="../js/oranbyte-google-translator.js"></script> -->
     <script>
      
       function switchToTab(tabId) {
