@@ -1,4 +1,4 @@
 <?php
-    include("../../assets/config.php");
+    include_once __DIR__ . '/../../assets/config.php';
 
 ?>

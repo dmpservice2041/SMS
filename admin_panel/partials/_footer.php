@@ -1,11 +1,13 @@
 
 
-    <script src="../assets/js/logout.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js" type="text/javascript"></script>
+  <script src="../assets/js/logout.js"></script>
+<!-- OLD jQuery - <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js" type="text/javascript"></script> -->
+<!-- NEW jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     
     <script src="js/bootstrap.bundle.js"></script>
     
-    <script src="script.js"></script>
+    <script src="../js/script.js"></script>
     <!-- <script src="../js/oranbyte-google-translator.js"></script> -->
     <script>
      

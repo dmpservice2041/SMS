@@ -307,12 +307,12 @@ body::-webkit-scrollbar {
     position: fixed;
     width: fit-content;
     transform: translate(50% 0);
-    position: relative;
+    position: relative; /* Corrected from fixed for better context with sidebar */
     width: fit-content;
 }
 
 .sidebar .side-menu-opener li {
-    position: fixed;
+    position: fixed; /* This will position it relative to the viewport, might need adjustment if you want it relative to sidebar */
     z-index: 1;
     transform: translate(620%, 40vh);
     /* border: 2px solid; */
@@ -361,7 +361,7 @@ body::-webkit-scrollbar {
 }
 
 .sidebar .side-menu li {
-    height: 48px;
+    height: 48px; /* This might be a bit restrictive if submenus are to expand naturally */
     background: transparent;
     margin-left: 6px;
     border-radius: 48px 0 0 48px;
@@ -502,12 +502,89 @@ body::-webkit-scrollbar {
     color: var(--danger);
 }
 
+/* START: CSS for Sidebar Submenu (Fee Management) */
+.sidebar .side-menu li.has-submenu {
+    /* Allow parent li to expand with its content */
+    height: auto; 
+}
+
+.sidebar .side-menu li.has-submenu > a.submenu-toggle {
+    /* Ensure the main toggle link behaves as expected */
+    position: relative; /* For positioning the arrow inside it */
+}
+
+.sidebar .side-menu li.has-submenu > a.submenu-toggle .submenu-arrow {
+    /* Positioning the arrow icon to the right */
+    position: absolute;
+    right: 15px; /* Adjust as needed */
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease; /* For smooth rotation animation */
+}
+
+.sidebar .side-menu li.has-submenu.open > a.submenu-toggle .submenu-arrow {
+    transform: translateY(-50%) rotate(180deg); /* Rotate arrow when submenu is open */
+}
+
+.sidebar .side-menu li.has-submenu ul.submenu {
+    list-style: none;
+    padding-left: 20px; /* Indent submenu items */
+    margin-left: 10px;  /* Align with parent icon/text area */
+    background: transparent; /* Or a slightly different shade if preferred */
+    /* display: none; is handled by JavaScript slideToggle */
+    overflow: hidden; /* Good for slideToggle animation */
+    position: static; /* CRITICAL: Ensures it stays in document flow */
+}
+
+.sidebar .side-menu li.has-submenu ul.submenu li {
+    /* Reset some styles from parent li if needed, or add new ones */
+    height: auto; /* Let content define height */
+    margin-left: 0;
+    border-radius: 0; /* Submenu items don't need the parent's rounded end */
+    padding: 0; /* Padding will be on the 'a' tag */
+    background: transparent; /* No special background unless desired */
+}
+.sidebar .side-menu li.has-submenu ul.submenu li:hover {
+    background: var(--grey); /* Example hover for submenu item li */
+}
+
+.sidebar .side-menu li.has-submenu ul.submenu li a {
+    /* Style for the actual links within the submenu */
+    font-size: 14px; /* Slightly smaller than main menu items */
+    padding: 8px 10px 8px 15px; /* Adjust padding: top right bottom left */
+    border-radius: 20px; /* Consistent rounding with other links perhaps */
+    height: auto; /* Let content define height */
+    white-space: normal; /* Allow text to wrap if very long */
+}
+
+.sidebar .side-menu li.has-submenu ul.submenu li.active a,
+.sidebar .side-menu li.has-submenu ul.submenu li a:hover {
+    /* color: var(--primary); */ /* Example active/hover color */
+    /* background: var(--light-primary); */ /* Example active/hover background */
+}
+
+/* Ensure active state on parent shows correctly when a submenu item is active */
+.sidebar .side-menu li.has-submenu.active {
+    background: var(--grey); /* Match the existing active style if needed */
+    /* The ::before and ::after for curved edges might need to be reconsidered or adjusted
+       if the height becomes variable due to the submenu.
+       For simplicity, you might remove them for .has-submenu.active if they cause issues.
+       Or, ensure .has-submenu.active applies only when NO submenu item is active and it itself is the target page.
+    */
+}
+/* END: CSS for Sidebar Submenu */
+
+
 .content {
     position: relative;
     width: calc(100% - 230px);
     left: 230px;
     transition: all 0.3s ease;
 }
+
+/* ... REST OF YOUR EXISTING CSS ... */
+/* (I've truncated the rest of your CSS for brevity here, 
+   but in your actual file, it would all follow) */
 
 .sidebar.close~.content {
     width: calc(100% - 60px);
@@ -2705,6 +2782,7 @@ td.tableData {
     }
 
 
+
     .content main .bottom-data>div {
         padding-top: 24px;
         padding-left: 10px;
@@ -3003,8 +3081,8 @@ td.tableData {
     }
 
     .content {
-        width: calc(100% - 60px);
-        left: 200px;
+        width: calc(100% - 60px); /* This seems like it might be an issue if sidebar.show is 200px */
+        left: 200px; /* This matches sidebar.show width */
     }
 
 

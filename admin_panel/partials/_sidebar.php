@@ -23,6 +23,23 @@
         <li><a href="syllabus.php"><i class='bx bx-file-blank'></i>Syllabus</a></li>
         <li><a href="notes.php"><i class='bx bx-note'></i>Notes</a></li>
         <li><a href="marks.php"><i class='bx bx-paste'></i>Marks</a></li>
+
+        <!-- START: New Fee Management Menu -->
+        <li class="has-submenu"> <!-- Added a class to identify this as a parent of a submenu -->
+            <a href="#" class="submenu-toggle"> <!-- Added a class to potentially target with JS for toggling -->
+                <i class='bx bx-money icon'></i> <!-- Icon for Fee Management -->
+                Fees
+                <i class='bx bx-chevron-down icon-right submenu-arrow'></i> <!-- Dropdown arrow icon -->
+            </a>
+            <ul class="submenu" style="display: none;"> <!-- Submenu, initially hidden -->
+                <li><a href="fee_structures.php"><i class='bx bx-radio-circle'></i>Fee Structure</a></li> <!-- Sub-icon example -->
+                <li><a href="fee_collection.php"><i class='bx bx-radio-circle'></i>Collect Fees</a></li>
+                <li><a href="fee_reports.php"><i class='bx bx-radio-circle'></i>Fee Reports</a></li>
+                <li><a href="fee_settings.php"><i class='bx bx-radio-circle'></i>Fee Settings</a></li>
+            </ul>
+        </li>
+        <!-- END: New Fee Management Menu -->
+
         <li><a href="buses.php"><i class='bx bxs-bus'></i>Bus Service</a></li>
         <li><a href="settings.php"><i class='bx bx-cog'></i>Settings</a></li>
     </ul>
